@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://source.service.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://source.service.br" xmlns:intf="http://source.service.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://source.service.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="selectCodigo">
+    <complexType>
+     <sequence>
+      <element name="codigo" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="selectCodigoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="selectCodigoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="selectRegistro">
+    <complexType>
+     <sequence>
+      <element name="registro" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="selectRegistroResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="selectRegistroReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="selectMedicamento">
+    <complexType>
+     <sequence>
+      <element name="remedio" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="selectMedicamentoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="selectMedicamentoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="selectPaciente">
+    <complexType>
+     <sequence>
+      <element name="nome" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="selectPacienteResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="selectPacienteReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="selectMedicamentoRequest">
+
+      <wsdl:part element="impl:selectMedicamento" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="selectRegistroResponse">
+
+      <wsdl:part element="impl:selectRegistroResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="selectPacienteRequest">
+
+      <wsdl:part element="impl:selectPaciente" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="selectCodigoRequest">
+
+      <wsdl:part element="impl:selectCodigo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="selectPacienteResponse">
+
+      <wsdl:part element="impl:selectPacienteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="selectMedicamentoResponse">
+
+      <wsdl:part element="impl:selectMedicamentoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="selectRegistroRequest">
+
+      <wsdl:part element="impl:selectRegistro" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="selectCodigoResponse">
+
+      <wsdl:part element="impl:selectCodigoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ImplementSource">
+
+      <wsdl:operation name="selectCodigo">
+
+         <wsdl:input message="impl:selectCodigoRequest" name="selectCodigoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:selectCodigoResponse" name="selectCodigoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="selectRegistro">
+
+         <wsdl:input message="impl:selectRegistroRequest" name="selectRegistroRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:selectRegistroResponse" name="selectRegistroResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="selectMedicamento">
+
+         <wsdl:input message="impl:selectMedicamentoRequest" name="selectMedicamentoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:selectMedicamentoResponse" name="selectMedicamentoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="selectPaciente">
+
+         <wsdl:input message="impl:selectPacienteRequest" name="selectPacienteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:selectPacienteResponse" name="selectPacienteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ImplementSourceSoapBinding" type="impl:ImplementSource">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="selectCodigo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="selectCodigoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="selectCodigoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="selectRegistro">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="selectRegistroRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="selectRegistroResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="selectMedicamento">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="selectMedicamentoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="selectMedicamentoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="selectPaciente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="selectPacienteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="selectPacienteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ImplementSourceService">
+
+      <wsdl:port binding="impl:ImplementSourceSoapBinding" name="ImplementSource">
+
+         <wsdlsoap:address location="http://localhost:8080/ProjetoService/services/ImplementSource"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
